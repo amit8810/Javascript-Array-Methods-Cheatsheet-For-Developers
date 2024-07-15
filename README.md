@@ -136,8 +136,8 @@ console.log(items); //[ 'bag', 'eraser', 'pen', 'compass' ]
 
 // 4.Removing Elements from the END
 const randomNumbers = [10,20,30,40,50];
-randomNumbers.splice(-1, 3);
-console.log(randomNumbers);
+randomNumbers.splice(-2, 2);
+console.log(randomNumbers); // [ 10, 20, 30 ]
 
 // 5.Removing Elements from start
 const array2 = [10,20,30,40,50];
