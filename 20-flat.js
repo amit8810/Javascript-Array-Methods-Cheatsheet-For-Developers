@@ -35,19 +35,40 @@ function flattenArray(arr) {
 
 
 let res = flattenArray(numbers);
-console.log("res : ", res);
+console.log("res : ", res); // res :  [ 1, 2, 3, 4, 5 ]
 
+// Flatten the nested object
+let person = {
+    name: "John",
+    age: 30,
+    address: {
+        street: "123 Main St",
+        city: "New York",
+        postalCode: "10001"
+    },
+};
 
-// let person = {
-//     name: "John",
-//     age: 30,
-//     address: {
-//         street: "123 Main St",
-//         city: "New York",
-//         postalCode: "10001"
-//     },
-//     hobbies: ["reading", "traveling", "coding"]
-// };
+let resultObj = {};
+function flattenObj(data) {
+    for (const key in data) {
 
-// const arrObj = Object.values(person);
-// console.log(arrObj);
+        if(typeof data[key] === 'object') {
+            flattenObj(data[key])
+        } else {
+            resultObj[key] = data[key];
+        }
+    }
+}
+
+flattenObj(person);
+console.log(resultObj);
+
+/*
+{
+  name: 'John',
+  age: 30,
+  street: '123 Main St',
+  city: 'New York',
+  postalCode: '10001'
+}
+*/
