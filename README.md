@@ -360,6 +360,22 @@ const array = [1,2,,,4,5,,,6];
 const newFlattenedArray = array.flat();
 console.log(newFlattenedArray); // [ 1, 2, 4, 5, 6 ]
 
+// flat array with custom function :: WAY 1
+let result = [];
+function flattenArray(arr) {
+    arr.map((item) => {
+        if(Array.isArray(item)){
+            flattenArray(item);
+        } else {
+            result.push(item);
+        }
+    })
+    return result;
+}
+
+
+let res = flattenArray(numbers);
+console.log("res : ", res);
 ```
 
 ## flatMap()

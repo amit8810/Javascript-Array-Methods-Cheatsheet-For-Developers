@@ -18,3 +18,36 @@ console.log(newArray3); // [ 1, 2, 3, 4, 5 ]
 const array = [1,2,,,4,5,,,6];
 const newFlattenedArray = array.flat();
 console.log(newFlattenedArray); // [ 1, 2, 4, 5, 6 ]
+
+
+// flat array with custom function :: WAY 1
+let result = [];
+function flattenArray(arr) {
+    arr.map((item) => {
+        if(Array.isArray(item)){
+            flattenArray(item);
+        } else {
+            result.push(item);
+        }
+    })
+    return result;
+}
+
+
+let res = flattenArray(numbers);
+console.log("res : ", res);
+
+
+// let person = {
+//     name: "John",
+//     age: 30,
+//     address: {
+//         street: "123 Main St",
+//         city: "New York",
+//         postalCode: "10001"
+//     },
+//     hobbies: ["reading", "traveling", "coding"]
+// };
+
+// const arrObj = Object.values(person);
+// console.log(arrObj);
