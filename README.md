@@ -548,21 +548,17 @@ console.log(employees);
 ```
 
 ## toString
-- This method converts the elements of a specified array into string form, without affecting the original array.
+- The toString() method in JavaScript is used to convert and return an object as a string. This method can be called on various data types, including numbers, arrays, dates, and objects, and it returns a string representation of the object.
 ```javascript
-// convert elements of specified array into string form
-// do not affect original array
+// Number to String
+let num = 15;
+let str = num.toString();
+console.log(`str : ${str}, and typeof str is : ${typeof str}`); //str : 15, and typeof str is : string
 
-const numbers = [1, 2, 3, 4, 5];
-
-const newString = numbers.toString();
-
-console.log(newString) // "1,2,3,4,5"
-console.log(typeof(newString)) // string
-
-
-console.log(newString[0]); // 1
-console.log(newString[1]); // ,
+// Array to String
+const arr = [1, 2, 3, 4, 5, 6];
+let str2 = arr.toString();
+console.log(str2 + " type of str2 is : " + typeof str2); // "1,2,3,4,5,6" type of str2 is : string
 ```
 
 ## From()
